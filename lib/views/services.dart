@@ -12,7 +12,6 @@ class Services extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 40, left: 10, bottom: 30),
@@ -22,17 +21,22 @@ class Services extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                height: 7,
-                width: 120,
-                decoration: BoxDecoration(
-                  color: Color(0xff0066B3),
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Color(0xff0066B3),
-                    width: 2,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start, // محاذاة لليسار
+                children: [
+                  Container(
+                    height: 7,
+                    width: 120,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff0066B3),
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(
+                        color: const Color(0xff0066B3),
+                        width: 2,
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
               const SizedBox(height: 20),
               const Text(
@@ -44,7 +48,7 @@ class Services extends StatelessWidget {
                   decoration: TextDecoration.none,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 60),
               const Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 spacing: 40,
@@ -76,7 +80,10 @@ class Services extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 50),
+              // const SizedBox(height: 50),
+              const SizedBox(
+                height: 110,
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.home);
@@ -143,7 +150,7 @@ class _ServiceBoxState extends State<ServiceBox> {
               borderRadius: BorderRadius.circular(20),
               border: _isSelected
                   ? Border.all(
-                      color: Color(0xff0066B3),
+                      color: const Color(0xff0066B3),
                       width: 4) // Increased border width
                   : null,
             ),
